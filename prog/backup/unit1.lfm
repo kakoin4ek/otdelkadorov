@@ -1,0 +1,123 @@
+object Form1: TForm1
+  Left = 293
+  Height = 749
+  Top = 122
+  Width = 852
+  Caption = 'Form1'
+  ClientHeight = 749
+  ClientWidth = 852
+  LCLVersion = '1.8.2.0'
+  object DBGrid1: TDBGrid
+    Left = 26
+    Height = 564
+    Top = 136
+    Width = 806
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object MySQL51Connection1: TMySQL51Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'otdel kadrov'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 39
+    top = 32
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'ИДРаботника'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'Фамилия'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Имя'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Отчество'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Серия  Паспорта'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Номер Паспорта'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'Дата Рождения'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'Образование'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Специальность'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Должность'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Дата Поступление на Предприятия'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'Оклад'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL51Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'SELECT * FROM `отдел кадров`'
+    )
+    Params = <>
+    left = 127
+    top = 37
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL51Connection1
+    left = 208
+    top = 68
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 397
+    top = 45
+  end
+end
