@@ -1,20 +1,80 @@
 object Form1: TForm1
-  Left = 293
-  Height = 749
-  Top = 122
+  Left = 379
+  Height = 741
+  Top = 83
   Width = 852
   Caption = 'Form1'
-  ClientHeight = 749
+  ClientHeight = 741
   ClientWidth = 852
   LCLVersion = '1.8.2.0'
   object DBGrid1: TDBGrid
-    Left = 26
-    Height = 564
-    Top = 136
-    Width = 806
-    AutoFillColumns = True
+    Left = 0
+    Height = 645
+    Top = 96
+    Width = 852
+    Align = alBottom
     Color = clWindow
-    Columns = <>
+    Columns = <    
+      item
+        Title.Caption = 'ИДРаботника'
+        Width = 50
+        FieldName = 'ИДРаботника'
+      end    
+      item
+        Title.Caption = 'Фамилия'
+        Width = 100
+        FieldName = 'Фамилия'
+      end    
+      item
+        Title.Caption = 'Имя'
+        Width = 100
+        FieldName = 'Имя'
+      end    
+      item
+        Title.Caption = 'Отчество'
+        Width = 100
+        FieldName = 'Отчество'
+      end    
+      item
+        Title.Caption = 'Серия  Паспорта'
+        Width = 100
+        FieldName = 'Серия  Паспорта'
+      end    
+      item
+        Title.Caption = 'Номер Паспорта'
+        Width = 100
+        FieldName = 'Номер Паспорта'
+      end    
+      item
+        Title.Caption = 'Дата Рождения'
+        Width = 100
+        FieldName = 'Дата Рождения'
+      end    
+      item
+        Title.Caption = 'Образование'
+        Width = 250
+        FieldName = 'Образование'
+      end    
+      item
+        Title.Caption = 'Специальность'
+        Width = 300
+        FieldName = 'Специальность'
+      end    
+      item
+        Title.Caption = 'Должность'
+        Width = 300
+        FieldName = 'Должность'
+      end    
+      item
+        Title.Caption = 'Дата Поступление на Предприятия'
+        Width = 100
+        FieldName = 'Дата Поступление на Предприятия'
+      end    
+      item
+        Title.Caption = 'Оклад'
+        Width = 50
+        FieldName = 'Оклад'
+      end>
     DataSource = DataSource1
     TabOrder = 0
   end
@@ -35,19 +95,6 @@ object Form1: TForm1
     DataSource = DataSource1
     Options = []
     TabOrder = 1
-  end
-  object MySQL51Connection1: TMySQL51Connection
-    Connected = True
-    LoginPrompt = False
-    DatabaseName = 'otdel kadrov'
-    KeepConnection = False
-    Transaction = SQLTransaction1
-    UserName = 'root'
-    CharSet = 'utf8'
-    HostName = 'localhost'
-    SkipLibraryVersionCheck = False
-    left = 39
-    top = 32
   end
   object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
@@ -109,7 +156,7 @@ object Form1: TForm1
         Size = 150
       end    
       item
-        Name = 'Дата Поступление на Предприятия'
+        Name = 'Дата Поступления'
         DataType = ftDate
         Precision = -1
       end    
@@ -119,24 +166,37 @@ object Form1: TForm1
         Precision = -1
       end>
     Active = True
-    Database = MySQL51Connection1
+    Database = MySQL56Connection1
     Transaction = SQLTransaction1
     SQL.Strings = (
-      'SELECT * FROM `отдел кадров`'
+      'SELECT * FROM `отдел кадров магнит`'
     )
     Params = <>
-    left = 127
-    top = 37
+    left = 40
+    top = 64
   end
   object SQLTransaction1: TSQLTransaction
     Active = True
-    Database = MySQL51Connection1
-    left = 208
-    top = 68
+    Database = MySQL56Connection1
+    left = 72
+    top = 64
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
     left = 397
     top = 45
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'otdelkadrov'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 208
+    top = 16
   end
 end

@@ -5,8 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, mysql51conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, DBGrids, DbCtrls;
+  Classes, SysUtils, mysql51conn, mysql56conn, sqldb, db, FileUtil, Forms,
+  Controls, Graphics, Dialogs, DBGrids, DbCtrls;
 
 type
 
@@ -16,7 +16,7 @@ type
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
-    MySQL51Connection1: TMySQL51Connection;
+    MySQL56Connection1: TMySQL56Connection;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
   private
