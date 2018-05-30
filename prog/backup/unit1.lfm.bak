@@ -1,82 +1,75 @@
 object Form1: TForm1
-  Left = 379
-  Height = 741
-  Top = 83
-  Width = 852
-  Caption = 'Form1'
-  ClientHeight = 741
-  ClientWidth = 852
+  Left = 170
+  Height = 529
+  Top = 104
+  Width = 985
+  Caption = 'Отдел Кадров Магнит'
+  ClientHeight = 529
+  ClientWidth = 985
   LCLVersion = '1.8.2.0'
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 645
-    Top = 96
-    Width = 852
-    Align = alBottom
+    Height = 321
+    Top = 0
+    Width = 985
+    Align = alTop
     Color = clWindow
     Columns = <    
       item
         Title.Caption = 'ИДРаботника'
-        Width = 50
         FieldName = 'ИДРаботника'
       end    
       item
         Title.Caption = 'Фамилия'
-        Width = 100
         FieldName = 'Фамилия'
       end    
       item
         Title.Caption = 'Имя'
-        Width = 100
         FieldName = 'Имя'
       end    
       item
         Title.Caption = 'Отчество'
-        Width = 100
         FieldName = 'Отчество'
       end    
       item
         Title.Caption = 'Серия  Паспорта'
-        Width = 100
         FieldName = 'Серия  Паспорта'
       end    
       item
         Title.Caption = 'Номер Паспорта'
-        Width = 100
         FieldName = 'Номер Паспорта'
       end    
       item
         Title.Caption = 'Дата Рождения'
-        Width = 100
         FieldName = 'Дата Рождения'
       end    
       item
         Title.Caption = 'Образование'
-        Width = 250
         FieldName = 'Образование'
       end    
       item
         Title.Caption = 'Специальность'
-        Width = 300
         FieldName = 'Специальность'
       end    
       item
         Title.Caption = 'Должность'
-        Width = 300
         FieldName = 'Должность'
       end    
       item
-        Title.Caption = 'Дата Поступление на Предприятия'
-        Width = 100
-        FieldName = 'Дата Поступление на Предприятия'
+        Title.Caption = 'Дата Поступления'
+        FieldName = 'Дата Поступления'
       end    
       item
         Title.Caption = 'Оклад'
-        Width = 50
         FieldName = 'Оклад'
+      end    
+      item
+        Title.Caption = 'Фото сотрудника'
+        FieldName = 'Фото сотрудника'
       end>
     DataSource = DataSource1
     TabOrder = 0
+    OnSelectEditor = DBGrid1SelectEditor
   end
   object DBNavigator1: TDBNavigator
     Left = 26
@@ -93,8 +86,277 @@ object Form1: TForm1
     ClientHeight = 25
     ClientWidth = 241
     DataSource = DataSource1
+    OnClick = DBNavigator1Click
     Options = []
     TabOrder = 1
+  end
+  object DBEdit1: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 352
+    Width = 120
+    DataField = 'Имя'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 328
+    Width = 120
+    DataField = 'Фамилия'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 376
+    Width = 120
+    DataField = 'Отчество'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 4
+  end
+  object DBEdit4: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 400
+    Width = 120
+    DataField = 'Серия  Паспорта'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 5
+  end
+  object DBEdit5: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 424
+    Width = 120
+    DataField = 'Номер Паспорта'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 6
+  end
+  object DBEdit6: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 448
+    Width = 120
+    DataField = 'Дата Рождения'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 7
+  end
+  object DBEdit7: TDBEdit
+    Left = 352
+    Height = 23
+    Top = 328
+    Width = 288
+    DataField = 'Образование'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 8
+  end
+  object DBEdit8: TDBEdit
+    Left = 352
+    Height = 23
+    Top = 352
+    Width = 288
+    DataField = 'Специальность'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 9
+  end
+  object DBEdit9: TDBEdit
+    Left = 352
+    Height = 23
+    Top = 376
+    Width = 288
+    DataField = 'Должность'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 10
+  end
+  object DBEdit10: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 472
+    Width = 120
+    DataField = 'Дата Поступления'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 11
+  end
+  object DBEdit11: TDBEdit
+    Left = 120
+    Height = 23
+    Top = 496
+    Width = 120
+    DataField = 'Оклад'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 150
+    TabOrder = 12
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 336
+    Width = 51
+    Caption = 'Фамилия'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 15
+    Top = 360
+    Width = 24
+    Caption = 'Имя'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 384
+    Width = 51
+    Caption = 'Отчество'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 408
+    Width = 34
+    Caption = 'Серия'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 15
+    Top = 432
+    Width = 38
+    Caption = 'Номер'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 15
+    Top = 456
+    Width = 83
+    Caption = 'Дата Рождения'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 256
+    Height = 15
+    Top = 360
+    Width = 85
+    Caption = 'Специальность'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 256
+    Height = 15
+    Top = 336
+    Width = 73
+    Caption = 'Образование'
+    ParentColor = False
+  end
+  object Label9: TLabel
+    Left = 256
+    Height = 15
+    Top = 384
+    Width = 62
+    Caption = 'Должность'
+    ParentColor = False
+  end
+  object Label10: TLabel
+    Left = 8
+    Height = 15
+    Top = 480
+    Width = 101
+    Caption = 'Дата Поступления'
+    ParentColor = False
+  end
+  object Label11: TLabel
+    Left = 8
+    Height = 15
+    Top = 504
+    Width = 34
+    Caption = 'Оклад'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 272
+    Height = 40
+    Top = 414
+    Width = 128
+    Caption = 'Добавить запись'
+    OnClick = Button1Click
+    TabOrder = 13
+  end
+  object Button2: TButton
+    Left = 448
+    Height = 40
+    Top = 414
+    Width = 110
+    Caption = 'Сохранить запись'
+    OnClick = Button2Click
+    TabOrder = 14
+  end
+  object Button3: TButton
+    Left = 272
+    Height = 40
+    Top = 464
+    Width = 128
+    Caption = 'Редактировать запись'
+    OnClick = Button3Click
+    TabOrder = 15
+  end
+  object Button4: TButton
+    Left = 448
+    Height = 40
+    Top = 464
+    Width = 110
+    Caption = 'Удалить запись'
+    OnClick = Button4Click
+    TabOrder = 16
+  end
+  object Edit1: TEdit
+    Left = 648
+    Height = 23
+    Top = 328
+    Width = 200
+    TabOrder = 17
+  end
+  object Button5: TButton
+    Left = 864
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Поиск'
+    OnClick = Button5Click
+    TabOrder = 18
+  end
+  object Image1: TImage
+    Left = 680
+    Height = 138
+    Top = 368
+    Width = 160
+    AutoSize = True
   end
   object SQLQuery1: TSQLQuery
     IndexName = 'DEFAULT_ORDER'
@@ -164,6 +426,12 @@ object Form1: TForm1
         Name = 'Оклад'
         DataType = ftInteger
         Precision = -1
+      end    
+      item
+        Name = 'Фото сотрудника'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
       end>
     Active = True
     Database = MySQL56Connection1
@@ -172,19 +440,19 @@ object Form1: TForm1
       'SELECT * FROM `отдел кадров магнит`'
     )
     Params = <>
-    left = 40
-    top = 64
+    left = 1232
+    top = 8
   end
   object SQLTransaction1: TSQLTransaction
     Active = True
     Database = MySQL56Connection1
-    left = 72
-    top = 64
+    left = 1264
+    top = 8
   end
   object DataSource1: TDataSource
     DataSet = SQLQuery1
-    left = 397
-    top = 45
+    left = 1328
+    top = 8
   end
   object MySQL56Connection1: TMySQL56Connection
     Connected = True
@@ -196,7 +464,7 @@ object Form1: TForm1
     CharSet = 'utf8'
     HostName = 'localhost'
     SkipLibraryVersionCheck = False
-    left = 208
-    top = 16
+    left = 1296
+    top = 8
   end
 end
